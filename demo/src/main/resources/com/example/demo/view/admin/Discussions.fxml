@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Discussions"
+            prefHeight="500.0" prefWidth="800.0">
+
+    <!-- Titre -->
+    <Label text="Liste des Discussions" layoutX="10" layoutY="10" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Champs de filtrage -->
+    <TextField fx:id="filterPatientTextField" layoutX="10" layoutY="40" promptText="Filtrer par nom de patient" onKeyReleased="#handleFilter"/>
+    <TextField fx:id="filterMedecinTextField" layoutX="200" layoutY="40" promptText="Filtrer par nom de médecin" onKeyReleased="#handleFilter"/>
+
+    <!-- TableView pour afficher les discussions -->
+    <TableView fx:id="discussionsTable" layoutX="10" layoutY="80" prefHeight="400.0" prefWidth="1200.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <columns>
+            <TableColumn text="ID" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Nom du Patient" prefWidth="300">
+                <cellValueFactory>
+                    <PropertyValueFactory property="patientName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Nom du Médecin" prefWidth="300">
+                <cellValueFactory>
+                    <PropertyValueFactory property="medecinName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Date de Création" prefWidth="300">
+                <cellValueFactory>
+                    <PropertyValueFactory property="createdAt" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="200">
+                <!-- Colonne pour le bouton Supprimer -->
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

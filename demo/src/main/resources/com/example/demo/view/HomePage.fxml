@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.org/fxml"
+           fx:controller="com.example.demo.controller.HomePageController"
+           style="-fx-background-color: #f0f8ff;" stylesheets="@styles.css">
+
+    <!-- Contenu principal -->
+    <VBox fx:id="mainContent" alignment="CENTER" spacing="20">
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <ImageView fitHeight="64" fitWidth="64">
+                <Image url="@icons/img.png"/>
+            </ImageView>
+            <Label text="Healthcare Management System" styleClass="header-title"/>
+        </HBox>
+
+        <Label fx:id="homeTitle" text="Welcome to the Future of Healthcare" styleClass="home-title">
+            <font>
+                <Font name="Roboto" size="36"/>
+            </font>
+        </Label>
+
+        <Label text="Manage your health records, appointments, and more with ease." styleClass="home-subtitle"/>
+
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="patientButton" text="Patient" styleClass="home-button" onAction="#handlePatientButtonClick"/>
+            <Button fx:id="doctorButton" text="Médecin" styleClass="home-button" onAction="#handleDoctorButtonClick"/>
+            <Button fx:id="laboratoryButton" text="Laboratoire" styleClass="home-button" onAction="#handleLaboratoryButtonClick"/>
+            <Button fx:id="registerButton" text="Inscription" styleClass="home-button" onAction="#handleRegisterButtonClick"/>
+        </HBox>
+    </VBox>
+    <StackPane fx:id="loginOverlay" visible="false">
+        <Rectangle width="1000" height="800" fill="rgba(0, 0, 0, 0.5)"/>
+
+        <VBox fx:id="loginForm" styleClass="overlay" alignment="CENTER" spacing="20">
+            <GridPane styleClass="login-form" hgap="10" vgap="10">
+                <Label text="Login" styleClass="form-title" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+
+                <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="emailField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Enter your email"/>
+
+                <Label text="Password:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="passwordField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Enter your password"/>
+
+                <Button text="Login" styleClass="form-button" GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#handleLogin"/>
+                <Hyperlink text="Don't have an account? Register here."
+                           GridPane.rowIndex="4" GridPane.columnSpan="2"
+                           GridPane.halignment="CENTER"/>
+            </GridPane>
+
+            <Button text="Close" onAction="#closeLoginForm"/>
+        </VBox>
+    </StackPane>
+    <StackPane fx:id="registerOverlay" styleClass="overlay" alignment="CENTER" visible="false">
+        <GridPane styleClass="login-form" hgap="40" vgap="20">
+            <Label text="Register" styleClass="form-title" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+
+            <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="regEmailField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Enter your email"/>
+
+            <Label text="Username:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="regUsernameField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Choose a username"/>
+
+            <Label text="Password:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="regPasswordField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="Create a password"/>
+
+            <Label text="Phone:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="phoneField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Enter your phone number"/>
+
+            <!-- Role Selection -->
+            <Label text="Role:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="roleComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1" promptText="Select your role">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="medecin"/>
+                        <String fx:value="Patient"/>
+                        <String fx:value="Laboratoire"/>
+                        <String fx:value="Admin"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <!-- Specialization Field (Visible only for Doctor) -->
+            <Label text="Specialization (Doctor only):" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="specializationField" GridPane.rowIndex="6" GridPane.columnIndex="1" promptText="Enter specialization">
+                <visible>false</visible> <!-- Set to false for visibility -->
+                <managed>false</managed> <!-- Set to false for managed property -->
+            </TextField>
+
+            <Label text="Address:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <TextField fx:id="addressField" GridPane.rowIndex="7" GridPane.columnIndex="1" promptText="Enter your address"/>
+
+            <Label text="ville:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+            <TextField fx:id="cityField" GridPane.rowIndex="10" GridPane.columnIndex="1" promptText="Enter your city"/>
+
+
+
+            <!-- Laboratory Field (Visible only for Laboratory) -->
+            <Label text="Laboratory (Laboratory only):" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <TextField fx:id="laboratoryField" GridPane.rowIndex="8" GridPane.columnIndex="1" promptText="Enter laboratory name">
+                <visible>false</visible> <!-- Set to false for visibility -->
+                <managed>false</managed> <!-- Set to false for managed property -->
+            </TextField>
+
+            <Button text="Register" styleClass="form-button" GridPane.rowIndex="11" GridPane.columnIndex="1" onAction="#handleRegister"/>
+
+            <!-- Move the hyperlink to the last row -->
+            <Hyperlink text="Already have an account? Login here." onAction="#onShowLoginPage" GridPane.rowIndex="12" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+        </GridPane>
+    </StackPane>
+</StackPane>

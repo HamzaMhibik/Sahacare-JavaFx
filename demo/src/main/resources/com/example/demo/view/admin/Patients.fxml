@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Patients"
+            prefHeight="500.0" prefWidth="800.0">
+
+    <VBox spacing="10" layoutX="10" layoutY="10" prefWidth="1100.0">
+        <!-- Titre -->
+        <Label text="Liste des patients" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- Champs de filtrage -->
+        <HBox spacing="10">
+            <Label text="Filtrer par nom:" />
+            <TextField fx:id="filterByNameField" promptText="Nom" />
+            <Label text="Filtrer par ville:" />
+            <TextField fx:id="filterByCityField" promptText="Ville" />
+            <Button text="Filtrer" onAction="#handleFilter" />
+        </HBox>
+
+
+
+        <!-- Tableau -->
+        <TableView fx:id="patientsTable" prefHeight="400.0" prefWidth="1300.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="usernameColumn" text="Nom" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="username"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="email"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="phoneColumn" text="Téléphone" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="phone"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="addressColumn" text="Adresse" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="address"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="cityColumn" text="Ville" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="city"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="createdAtColumn" text="Date d'inscription" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="createdAt"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Actions" prefWidth="150">
+                    <!-- Colonne pour le bouton Supprimer -->
+                </TableColumn>
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>

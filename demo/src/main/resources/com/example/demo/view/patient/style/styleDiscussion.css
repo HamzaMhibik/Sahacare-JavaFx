@@ -1,0 +1,146 @@
+/* Style de la zone de messages (ScrollPane) */
+.messages-scroll {
+    -fx-background-color: #f1f1f1;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-background-insets: 5;
+    -fx-background-radius: 10px;
+}
+
+/* Style pour la zone de saisie de message (TextField) */
+.message-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 20px;
+    -fx-padding: 10px;
+    -fx-pref-width: 400px;
+    -fx-font-size: 14px;
+    -fx-focus-color: #4CAF50; /* Couleur de focus lorsque l'utilisateur clique */
+}
+
+/* Style pour le bouton d'envoi (Button) */
+.send-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-pref-width: 100px;
+    -fx-cursor: hand;
+}
+
+.send-button:hover {
+    -fx-background-color: #45a049; /* Couleur au survol */
+}
+
+.send-button:pressed {
+    -fx-background-color: #388e3c; /* Couleur quand le bouton est pressé */
+}
+
+/* Style pour la zone contenant les messages */
+.messagesContainer {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-max-height: 500px; /* Hauteur maximale de la zone des messages */
+    -fx-overflow-y: auto;
+}
+
+/* Style de chaque message individuel dans la zone de discussion */
+.text-message {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-background-color: #f5f5f5;
+    -fx-border-radius: 10px;
+    -fx-margin: 5px 0;
+}
+
+.text-message.received {
+    -fx-background-color: #e0f7fa; /* Couleur pour les messages reçus */
+}
+
+.text-message.sent {
+    -fx-background-color: #c8e6c9; /* Couleur pour les messages envoyés */
+}
+.message-container {
+    -fx-padding: 5 10 5 10;
+}
+
+.message-patient {
+    -fx-background-color: #DCF8C6;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
+
+.message-doctor {
+    -fx-background-color: #ECECEC;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
+/* ScrollPane des messages */
+.messages-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-background-radius: 10px;
+}
+
+/* Conteneur principal des messages */
+#messagesContainer {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+}
+
+/* Message général */
+.text-message {
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 12px;
+    -fx-wrap-text: true;
+    -fx-max-width: 70%; /* Empêche les messages de s'étendre trop */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 2, 2);
+}
+
+/* Messages envoyés par le patient */
+.text-message.sent {
+    -fx-background-color: #DCF8C6;
+    -fx-text-fill: #333;
+}
+
+/* Messages reçus du médecin */
+.text-message.received {
+    -fx-background-color: #ECECEC;
+    -fx-text-fill: #333;
+}
+
+/* Champ de saisie */
+.message-input {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 20px;
+    -fx-padding: 10px;
+    -fx-pref-width: 400px;
+    -fx-font-size: 14px;
+}
+
+/* Bouton d'envoi */
+.send-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-pref-width: 100px;
+    -fx-cursor: hand;
+}
+
+.send-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.send-button:pressed {
+    -fx-background-color: #388e3c;
+}

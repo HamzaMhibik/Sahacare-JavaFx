@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Questions"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <!-- Title -->
+    <Label text="Liste de Questions" layoutX="10" layoutY="10" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Search Fields -->
+    <HBox layoutX="10" layoutY="40" spacing="10">
+        <TextField fx:id="questionFilter" promptText="Filtrer par question" />
+        <TextField fx:id="usernameFilter" promptText="Filtrer par nom d'utilisateur" />
+        <Button text="Filtrer" onAction="#applyFilters"/>
+    </HBox>
+
+    <!-- TableView -->
+    <TableView fx:id="questionsTable" layoutX="10" layoutY="80" prefHeight="500.0" prefWidth="1100.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="questionColumn" text="Question" prefWidth="600">
+                <cellValueFactory><PropertyValueFactory property="question"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="usernameColumn" text="Nom de l'utilisateur" prefWidth="250">
+                <cellValueFactory><PropertyValueFactory property="username"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Actions" prefWidth="150">
+                <!-- Colonne pour le bouton Supprimer -->
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

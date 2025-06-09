@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="discussionWindow" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controller.Medecin.DiscussionWindowController" spacing="10" style="-fx-padding: 20;">
+    <Label fx:id="patientNameLabel" text="Discussion avec : " style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 10px;"/>
+    <ScrollPane fx:id="messagesScrollPane" style="-fx-pref-height: 400px; -fx-pref-width: 600px;">
+        <VBox fx:id="messagesContainer" spacing="10"/>
+    </ScrollPane>
+    <HBox spacing="10" style="-fx-padding: 10px;">
+        <TextField fx:id="messageInput" promptText="Entrez votre message..." style="-fx-pref-width: 500px;"/>
+        <Button text="Envoyer" onAction="#sendMessage" style="-fx-font-size: 14px;"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,33 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableCell?>
+<?import javafx.scene.control.Label?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.collections.ObservableList?>
+<?import javafx.scene.Scene?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.org/fxml" fx:controller="com.example.demo.controller.Medecin.CalendrierController">
+    <!-- Titre -->
+    <Label text="Calendrier" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 10px;"/>
+
+    <!-- TableView avec styles CSS appliqués et hauteur augmentée -->
+    <TableView fx:id="scheduleTable" styleClass="table-view"
+               style="-fx-font-size: 14px;" prefHeight="720">
+        <columns>
+            <TableColumn text="Jour" fx:id="jourColumn" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="8:30-9:00" fx:id="creneau1Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="9:00-9:30" fx:id="creneau2Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="9:30-10:00" fx:id="creneau3Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="10:00-10:30" fx:id="creneau4Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="10:30-11:00" fx:id="creneau5Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="11:00-11:30" fx:id="creneau6Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="11:30-12:00" fx:id="creneau7Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="14:00-14:30" fx:id="creneau8Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="14:30-15:00" fx:id="creneau9Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="15:00-15:30" fx:id="creneau10Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+            <TableColumn text="15:30-16:00" fx:id="creneau11Column" style="-fx-alignment: CENTER; -fx-font-size: 16px; -fx-min-height: 40px;" />
+        </columns>
+    </TableView>
+</VBox>
+

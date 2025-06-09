@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.layout.Background?>
+<?import javafx.scene.layout.BackgroundFill?>
+<?import javafx.scene.layout.CornerRadii?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.ScrollPane?>
+
+<?import java.net.URL?>
+<ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.org/fxml" fx:controller="com.example.demo.controller.Medecin.DashboardController">
+    <stylesheets>
+        <URL value="@style/styles.css" />
+    </stylesheets>
+    <VBox>
+        <!-- Section principale avec une image et un texte -->
+        <!-- Section principale avec une image et un texte -->
+        <HBox spacing="20" styleClass="section">
+            <VBox spacing="10">
+                <Label text="Prenez rapidement un rendez-vous avec votre médecin !" styleClass="main-title" />
+                <Label text="Sélectionnez votre médecin, choisissez la date et l'heure de votre rdv et recevez votre sms/mail de confirmation. C’est aussi simple que ça !" wrapText="true" styleClass="sub-title" />
+            </VBox>
+            <ImageView fitHeight="200" fitWidth="350" styleClass="image-view">
+                <Image url="@icons/image1.PNG"/>
+            </ImageView>
+        </HBox>
+
+        <!-- Section "Pourquoi prendre rendez-vous avec Sahacare?" -->
+        <HBox spacing="20" styleClass="section" alignment="CENTER">
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="Pourquoi prendre rendez-vous avec Sahacare?" styleClass="main-title" />
+                <Label text="Avec SahaCare, prenez rendez-vous en ligne avec votre médecin autrement." wrapText="true" styleClass="sub-title" />
+            </VBox>
+        </HBox>
+
+        <!-- Section avec trois parties (images et textes) -->
+        <HBox spacing="50" styleClass="section" alignment="CENTER">
+            <VBox spacing="15" alignment="CENTER">
+                <ImageView fitHeight="200" fitWidth="200" styleClass="image-view">
+                    <Image url="@icons/image2.PNG"/>
+                </ImageView>
+                <Label text="Accédez rapidement à votre médecin" styleClass="sub-title" />
+            </VBox>
+            <VBox spacing="15" alignment="CENTER">
+                <ImageView fitHeight="200" fitWidth="200" styleClass="image-view">
+                    <Image url="@icons/image3.PNG"/>
+                </ImageView>
+                <Label text="Prenez rendez-vous en ligne à tout moment" styleClass="sub-title" />
+            </VBox>
+            <VBox spacing="15" alignment="CENTER">
+                <ImageView fitHeight="200" fitWidth="200" styleClass="image-view">
+                    <Image url="@icons/image4.PNG"/>
+                </ImageView>
+                <Label text="Recevez des sms/mail de rappel personnalisés" styleClass="sub-title" />
+            </VBox>
+        </HBox>
+
+        <!-- Titre pour la section des articles -->
+        <Label text="Derniers articles ajoutés" styleClass="main-title" style="-fx-padding: 20 20 10 20;" />
+
+        <!-- Nouvelle section pour afficher les articles -->
+        <VBox fx:id="articlesContainer" spacing="20" styleClass="section" alignment="CENTER" maxWidth="1300">
+            <!-- Les articles seront ajoutés dynamiquement ici par le contrôleur -->
+        </VBox>
+
+        <!-- Titre pour la section des statistiques -->
+        <Label text="Utilisation de la Plateforme Sahacare" styleClass="main-title" style="-fx-padding: 20 20 10 20;" />
+
+        <!-- Section des statistiques -->
+        <HBox fx:id="statsContainer" spacing="20" styleClass="section" alignment="CENTER">
+            <!-- Les cartes de statistiques seront ajoutées dynamiquement ici par le contrôleur -->
+        </HBox>
+    </VBox>
+</ScrollPane>

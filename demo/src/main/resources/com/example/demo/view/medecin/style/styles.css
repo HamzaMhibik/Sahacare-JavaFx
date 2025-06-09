@@ -1,0 +1,84 @@
+/* Style général pour la page */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f4f4f4;
+}
+
+/* Style pour les titres principaux */
+.main-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Style pour les sous-titres */
+.sub-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* Style pour les sections */
+.section {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* Style pour les cartes de statistiques */
+.stat-card {
+    -fx-background-color: #4CAF50; /* Couleur par défaut */
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-min-width: 200px;
+    -fx-alignment: center;
+}
+
+.stat-card .label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.stat-card .value {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Style pour les articles */
+.article-box {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+    -fx-max-width: 1450px;
+}
+
+.article-box .title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.article-box .category {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.article-box .description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+    -fx-wrap-text: true;
+}
+
+/* Style pour les images */
+.image-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}

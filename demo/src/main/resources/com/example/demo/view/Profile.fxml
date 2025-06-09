@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.org/fxml"
+      fx:controller="com.example.demo.controller.ProfileController"
+      alignment="CENTER" spacing="20" styleClass="profile-container" stylesheets="@stylesProfile.css">
+
+    <Label text="Profil de l'utilisateur" styleClass="title"/>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Nom:" styleClass="label"/>
+        <Label fx:id="usernameLabel" styleClass="data-label"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Email:" styleClass="label"/>
+        <Label fx:id="emailLabel" styleClass="data-label"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Mot de passe:" styleClass="label"/>
+        <Label fx:id="passwordLabel" styleClass="data-label"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Numéro:" styleClass="label"/>
+        <Label fx:id="phoneNumberLabel" styleClass="data-label"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Spécialisation:" styleClass="label"/>
+        <Label fx:id="specializationLabel" styleClass="data-label"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Adresse:" styleClass="label"/>
+        <Label fx:id="addressLabel" styleClass="data-label"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Date de création:" styleClass="label"/>
+        <Label fx:id="creationDateLabel" styleClass="data-label"/>
+    </HBox>
+
+    <Button text="Modifier" onAction="#handleBack" styleClass="back-button"/>
+</VBox>

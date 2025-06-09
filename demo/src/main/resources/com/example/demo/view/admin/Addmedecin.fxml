@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Addmedecin"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Main VBox for layout -->
+    <VBox spacing="15" layoutX="50.0" layoutY="20.0" alignment="CENTER" prefWidth="500.0">
+        <!-- Title with styling -->
+        <Label text="Ajouter un Médecin" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2f4f4f;" alignment="CENTER"/>
+
+        <!-- Form Inputs Section with labels for better clarity -->
+        <GridPane hgap="10" vgap="10" alignment="CENTER_LEFT">
+            <!-- Column constraints -->
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" />
+                <ColumnConstraints halignment="LEFT" />
+            </columnConstraints>
+
+            <!-- Fields with labels -->
+            <Label text="Nom complet:" />
+            <TextField fx:id="fullNameField" promptText="Nom complet" GridPane.columnIndex="1" prefWidth="250.0"/>
+
+            <Label text="Email:" GridPane.rowIndex="1"/>
+            <TextField fx:id="emailField" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="250.0"/>
+
+            <Label text="Téléphone:" GridPane.rowIndex="2"/>
+            <TextField fx:id="phoneField" promptText="Téléphone" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="250.0"/>
+
+            <Label text="Ville:" GridPane.rowIndex="3"/>
+            <TextField fx:id="cityField" promptText="Ville" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="250.0"/>
+
+            <Label text="Adresse:" GridPane.rowIndex="4"/>
+            <TextField fx:id="addressField" promptText="Adresse" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="250.0"/>
+
+            <Label text="Mot de passe:" GridPane.rowIndex="5"/>
+            <PasswordField fx:id="passwordField" promptText="Mot de passe" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="250.0"/>
+
+            <Label text="Spécialité:" GridPane.rowIndex="6"/>
+            <TextField fx:id="specialtyField" promptText="Spécialité" GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="250.0"/>
+        </GridPane>
+
+        <!-- Add Button at the bottom -->
+        <Button text="Ajouter" onAction="#handleAddMedecin" alignment="CENTER" prefWidth="150.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </VBox>
+</AnchorPane>

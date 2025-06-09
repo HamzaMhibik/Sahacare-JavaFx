@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Patient.ResponseDialogController">
+
+    <content>
+        <VBox spacing="15" style="-fx-padding: 15; -fx-background-color: #f9f9f9;">
+
+            <!-- Question affichée en haut -->
+            <Label fx:id="questionLabel"
+                   style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #333;"/>
+
+            <!-- Liste des réponses -->
+            <ListView fx:id="responsesListView" prefHeight="600.0" prefWidth="420.0"
+                      style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5;"/>
+
+            <!-- Espacement flexible pour pousser le TextField et le bouton en bas -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Zone d'ajout d'une nouvelle réponse -->
+            <TextField fx:id="newResponseField" promptText="Entrez votre réponse ici..."
+                       prefWidth="420.0" style="-fx-padding: 8; -fx-border-radius: 5; -fx-border-color: #bbb;"/>
+
+            <!-- Bouton pour envoyer une réponse -->
+            <Button text="Ajouter une réponse" onAction="#addResponse" prefWidth="420.0"
+                    style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+        </VBox>
+    </content>
+</DialogPane>

@@ -1,0 +1,141 @@
+/* Style de base pour le BorderPane */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Style pour la barre latérale (sidebar) */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+}
+
+/* Style pour le titre de la barre latérale */
+.sidebar-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+/* Style pour les boutons de la barre latérale */
+.sidebar-button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+/* Style pour les boutons de la barre latérale au survol */
+.sidebar-button:hover {
+    -fx-background-color: #1abc9c;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Style pour la zone centrale */
+.center-area {
+    -fx-background-color: #ffffff;
+    -fx-padding: 40px;
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+/* Style pour le texte de bienvenue */
+.welcome-text {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* Style pour l'image dans la barre latérale */
+ImageView {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+/* Style de base pour le BorderPane */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Style pour la zone centrale */
+.center-area {
+    -fx-background-color: #ffffff;
+    -fx-padding: 40px;
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+/* Style pour le texte de bienvenue */
+.welcome-text {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* Style pour la barre de filtrage */
+.filter-bar {
+    -fx-spacing: 20px;
+    -fx-alignment: center-left;
+}
+
+/* Style pour les champs de filtrage */
+.filter-field {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 14px;
+}
+
+/* Style pour le bouton de filtrage */
+.filter-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 15px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+/* Style pour le tableau */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+/* Style pour les en-têtes de colonne */
+.table-view .column-header {
+    -fx-background-color: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+/* Style pour les lignes du tableau */
+.table-view .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ecf0f1;
+}
+
+/* Style pour les lignes du tableau au survol */
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f4f4f4;
+}
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+.top-bar {
+    -fx-background-color: #2c3e50; /* Couleur de fond */
+    -fx-padding: 10px;
+    -fx-border-color: #34495e;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.top-bar-title {
+    -fx-text-fill: #ecf0f1; /* Couleur du texte */
+}

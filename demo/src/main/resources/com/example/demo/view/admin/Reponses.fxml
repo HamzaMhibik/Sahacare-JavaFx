@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Reponses"
+            prefHeight="500.0" prefWidth="600.0">
+
+    <!-- Title Label -->
+    <Label text="Liste des Réponses" layoutX="10" layoutY="10" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <!-- Filter Fields -->
+    <TextField fx:id="responseFilter" layoutX="10" layoutY="40" prefWidth="180.0" promptText="Filtrer par réponse" onKeyReleased="#applyFilters"/>
+    <TextField fx:id="userIdFilter" layoutX="200" layoutY="40" prefWidth="180.0" promptText="Filtrer par User ID" onKeyReleased="#applyFilters"/>
+
+    <!-- TableView for displaying responses -->
+    <TableView fx:id="reponsesTable" layoutX="10" layoutY="70" prefHeight="380.0" prefWidth="1200.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="questionIdColumn" text="Question ID" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="questionId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="responseColumn" text="Réponse" prefWidth="600">
+                <cellValueFactory>
+                    <PropertyValueFactory property="response" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="userIdColumn" text="User ID" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="userId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="actionColumn" text="Action" prefWidth="200">
+                <!-- Cette colonne n'a pas de cellValueFactory car elle contient un bouton -->
+            </TableColumn>
+        </columns>
+    </TableView>
+</AnchorPane>

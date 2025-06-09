@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.org/fxml" fx:controller="com.example.demo.controller.Medecin.PatientController">
+    <Label text="Liste des Patients"/>
+    <!-- Votre contenu pour Patients ici -->
+</VBox>

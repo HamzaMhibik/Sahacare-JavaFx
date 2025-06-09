@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.org/fxml" fx:controller="com.example.demo.controller.Medecin.EnregistrementController" spacing="10">
+    <Label text="Enregistrement"/>
+
+    <Label text="Numéro:"/>
+    <TextField fx:id="numeroField" promptText="Entrez le numéro"/>
+
+    <Label text="Message:"/>
+    <TextArea fx:id="messageField" promptText="Entrez votre message"/>
+
+    <Button text="Envoyer" onAction="#envoyerMessage"/>
+</VBox>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Medecin.CreateArticleController"
+            style="-fx-background-color: #ecf0f1;">
+
+    <VBox spacing="20" maxWidth="Infinity" maxHeight="Infinity"
+          style="-fx-padding: 30; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
+          AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <!-- Header Section -->
+        <HBox alignment="CENTER" style="-fx-background-color: #2c3e50; -fx-background-radius: 8; -fx-padding: 15;">
+            <Label text="Créer un Article"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ffffff;"/>
+        </HBox>
+
+        <!-- Input Fields -->
+        <TextField fx:id="titreField" promptText="Titre de l'article"
+                   style="-fx-background-color: #f9f9f9; -fx-background-radius: 8; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-border-width: 1; -fx-pref-height: 35px; -fx-font-size: 14px;"
+                   VBox.vgrow="NEVER"/>
+
+        <ComboBox fx:id="categoryComboBox" promptText="Catégorie" editable="true"
+                  style="-fx-background-color: #f9f9f9; -fx-background-radius: 8; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-border-width: 1; -fx-pref-height: 45px; -fx-font-size: 14px;"
+                  VBox.vgrow="NEVER"/>
+
+        <!-- HTMLEditor with Toolbar -->
+        <VBox spacing="15" VBox.vgrow="ALWAYS">
+            <HBox spacing="10">
+                <ComboBox fx:id="fontSizeComboBox" promptText="Taille Police"
+                          style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 5; -fx-pref-height: 30px; -fx-font-size: 12px;"
+                          onAction="#handleFontSizeChange"/>
+                <Button fx:id="insertLinkButton" text="🔗 Lien"
+                        style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 5 10;"
+                        onAction="#handleInsertLink"/>
+                <Button fx:id="insertTableButton" text="📋 Tableau"
+                        style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 5 10;"
+                        onAction="#handleInsertTable"/>
+                <Button fx:id="wordWrapButton" text="↔ Wrap"
+                        style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 5 10;"
+                        onAction="#handleWordWrap"/>
+                <Button fx:id="clearButton" text="🗑 Clear"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 5 10;"
+                        onAction="#handleClear"/>
+            </HBox>
+            <HTMLEditor fx:id="descriptionEditor"
+                        prefHeight="500"
+                        style="-fx-border-radius: 8; -fx-border-width: 1; -fx-border-color: #bdc3c7;"
+                        VBox.vgrow="ALWAYS"/>
+            <HBox spacing="20">
+                <Label fx:id="charCountLabel" text="Caractères: 0"
+                       style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                <Label fx:id="wordCountLabel" text="Mots: 0"
+                       style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+            </HBox>
+            <Button fx:id="uploadImageButton" text="📷 Upload Image (Resizable)"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);"
+                    onAction="#handleUploadImage"/>
+        </VBox>
+
+        <!-- Button Container -->
+        <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+            <Button fx:id="saveButton" text="💾 Enregistrer"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 12 25; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);"
+                    HBox.hgrow="ALWAYS"/>
+            <Button fx:id="cancelButton" text="❌ Annuler"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 12 25; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);"
+                    HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>

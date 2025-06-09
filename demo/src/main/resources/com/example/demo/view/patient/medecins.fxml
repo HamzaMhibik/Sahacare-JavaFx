@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Patient.medecins"
+            prefHeight="500.0" prefWidth="800.0">
+    <stylesheets>
+        <URL value="@style/stylemedecin.css" />
+    </stylesheets>
+
+    <!-- Barre de recherche en haut -->
+    <top>
+        <HBox fx:id="topSearchFields" spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Label text="Nom:" />
+            <TextField fx:id="nameSearchField" promptText="Rechercher par nom" styleClass="search-field" />
+            <Label text="Ville:" />
+            <TextField fx:id="citySearchField" promptText="Rechercher par ville" styleClass="search-field" />
+            <Label text="Spécialité:" />
+            <TextField fx:id="specializationSearchField" promptText="Rechercher par spécialité" styleClass="search-field" />
+        </HBox>
+    </top>
+
+    <!-- Centre pour afficher les détails du médecin et les commentaires -->
+    <center>
+        <StackPane>
+            <!-- GridPane pour afficher la liste des médecins -->
+            <GridPane fx:id="medecinsGrid" hgap="10" vgap="10" />
+
+            <!-- VBox pour afficher les détails du médecin (masquée par défaut) -->
+            <VBox fx:id="detailsBox" spacing="20" alignment="CENTER" styleClass="details-box" visible="false">
+                <Label text="Détails du médecin" styleClass="detail-title" />
+
+                <!-- Première ligne : Nom, Spécialité, Ville -->
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <Label text=" " styleClass="detail-label" />
+                    <Label fx:id="detailName" styleClass="detail-value" />
+                    <Label text=" " styleClass="detail-label" />
+                    <Label fx:id="detailSpecialisation" styleClass="detail-value" />
+                    <Label text=" " styleClass="detail-label" />
+                    <Label fx:id="detailCity" styleClass="detail-value" />
+                    <Label text=" " styleClass="detail-label" />
+                    <Label fx:id="detailEmail" styleClass="detail-value" />
+                    <Label text=" " styleClass="detail-label" />
+                    <Label fx:id="detailPhone" styleClass="detail-value" />
+                    <Label text=" " styleClass="detail-label" />
+                    <Label fx:id="detailAddress" styleClass="detail-value" />
+                </HBox>
+
+
+                <!-- Liste des commentaires -->
+                <VBox spacing="10" styleClass="comment-container">
+                    <Label text="Avis:" styleClass="detail-title" />
+                    <ScrollPane style="-fx-pref-height: 300;">
+                        <VBox fx:id="commentContainer" spacing="10" />
+                    </ScrollPane>
+                </VBox>
+
+                <!-- Champ de commentaire et bouton Enregistrer -->
+                <VBox spacing="10" styleClass="comment-container">
+                    <Label text="Ajouter votre avis:" styleClass="detail-title" />
+                    <TextArea fx:id="commentField" promptText="Écrivez votre commentaire ici..." styleClass="comment-field" />
+                    <Button id="saveCommentButton" text="Enregistrer" onAction="#handleSaveComment" />
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+
+    <!-- Boutons en bas de la page -->
+    <bottom>
+        <HBox fx:id="bottomButtons" spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Button id="calendrierButton" text="Calendrier" onAction="#openCalendrierFromDetails" />
+            <Button id="discussionButton" text="Discussion" onAction="#handleDiscussionButtonFromDetails" />
+            <Button id="retourButton" text="Retour" onAction="#handleBackButton" />
+        </HBox>
+    </bottom>
+</BorderPane>

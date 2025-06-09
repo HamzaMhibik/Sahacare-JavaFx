@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Medecins"
+            prefHeight="500.0" prefWidth="800.0">
+
+    <VBox spacing="10" layoutX="10" layoutY="10" prefWidth="1100.0">
+        <!-- Titre -->
+        <Label text="Liste de médecins" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- Champs de filtrage -->
+        <HBox spacing="10">
+            <Label text="Filtrer par nom:" />
+            <TextField fx:id="filterNom" promptText="Nom" />
+            <Label text="Filtrer par ville:" />
+            <TextField fx:id="filterVille" promptText="Ville" />
+            <Label text="Filtrer par spécialité:" />
+            <TextField fx:id="filterSpecialite" promptText="Spécialité" />
+            <Button text="Filtrer" onAction="#handleFilter" />
+        </HBox>
+
+        <!-- Bouton Ajouter Médecin -->
+        <Button text="Ajouter Médecin" onAction="#handleAddMedecin" />
+
+        <!-- Tableau -->
+        <TableView fx:id="medecinsTable" prefHeight="400.0" prefWidth="1300.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="usernameColumn" text="Nom" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="nomComplet"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="specializationColumn" text="Spécialisation" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="specialite"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="email"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="phoneColumn" text="Téléphone" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="phone"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="addressColumn" text="Adresse" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="address"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="cityColumn" text="Ville" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="city"/></cellValueFactory>
+                </TableColumn>
+
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>

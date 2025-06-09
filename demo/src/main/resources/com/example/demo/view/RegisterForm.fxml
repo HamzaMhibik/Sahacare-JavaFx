@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.RegisterController">
+
+    <VBox alignment="CENTER" spacing="20" prefHeight="400.0" prefWidth="600.0">
+        <GridPane styleClass="login-form" hgap="40" vgap="20" alignment="CENTER">
+            <Label text="Register" styleClass="form-title" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+            <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="regEmailField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Enter your email"/>
+            <Label text="Username:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="regUsernameField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Choose a username"/>
+            <Label text="Password:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="regPasswordField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="Create a password"/>
+            <Label text="Phone:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="phoneField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Enter your phone number"/>
+            <Label text="Role:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="roleComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1" promptText="Select your role">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="medecin"/>
+                        <String fx:value="Patient"/>
+                        <String fx:value="Laboratoire"/>
+                        <String fx:value="Admin"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Specialization (Doctor only):" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="specializationField" GridPane.rowIndex="6" GridPane.columnIndex="1" promptText="Enter specialization">
+                <visible>false</visible>
+                <managed>false</managed>
+            </TextField>
+            <Label text="Address:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <TextField fx:id="addressField" GridPane.rowIndex="7" GridPane.columnIndex="1" promptText="Enter your address"/>
+            <Label text="City:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <TextField fx:id="cityField" GridPane.rowIndex="8" GridPane.columnIndex="1" promptText="Enter your city"/>
+            <Label text="Laboratory (Laboratory only):" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+            <TextField fx:id="laboratoryField" GridPane.rowIndex="9" GridPane.columnIndex="1" promptText="Enter laboratory name">
+                <visible>false</visible>
+                <managed>false</managed>
+            </TextField>
+            <Button text="Register" styleClass="form-button" GridPane.rowIndex="10" GridPane.columnIndex="1" onAction="#handleRegister"/>
+            <Hyperlink text="Already have an account? Login here." onAction="#onShowLoginPage" GridPane.rowIndex="11" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+        </GridPane>
+    </VBox>
+
+</AnchorPane>

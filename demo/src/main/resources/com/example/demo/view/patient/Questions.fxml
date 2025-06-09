@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Patient.Questions"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <!-- Conteneur principal -->
+    <VBox spacing="15" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <Label text="Vous avez un question ?" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <!-- Formulaire pour ajouter une nouvelle question (EN HAUT) -->
+        <HBox spacing="10">
+            <TextField fx:id="newQuestionField" promptText="Entrez votre question ici..."
+                       prefWidth="650.0" style="-fx-padding: 10; -fx-border-radius: 5; -fx-border-color: #ccc;"/>
+            <Button text="Ajouter" onAction="#addQuestion" prefWidth="120.0" prefHeight="40.0"
+                    style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <!-- Label pour la liste des questions -->
+        <Label text="Liste des Questions" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <!-- Liste des questions avec un ScrollPane -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+            <VBox fx:id="questionsContainer" spacing="10"
+                  style="-fx-background-color: #ffffffff; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: #ccc;"/>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>

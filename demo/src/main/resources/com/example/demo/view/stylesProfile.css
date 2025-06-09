@@ -1,0 +1,66 @@
+/* Global styles */
+.profile-container {
+    -fx-background-color: #ffffff; /* Fond blanc */
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-border-color: black; /* Bordure grise autour du conteneur */
+    -fx-border-width: 1px;
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A4A4A;
+    -fx-margin-bottom: 20px;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A4A4A;
+    -fx-label-padding: 10px;
+}
+
+.data-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6c757d;
+    -fx-padding: 5px 10px;
+    -fx-background-color: #f8f9fa; /* Fond très clair pour les données */
+    -fx-border-radius: 5px;
+    -fx-border-color: #ddd; /* Bordure grise */
+    -fx-min-width: 200px;
+    -fx-max-width: 400px;
+}
+
+HBox {
+    -fx-padding: 5px;
+}
+
+HBox .label, HBox .data-label {
+    -fx-alignment: center-left;
+}
+
+.back-button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-border: none;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.3s ease-in-out;
+    -fx-margin-top: 20px;
+}
+
+.back-button {
+    -fx-background-color: #0056b3;
+}
+
+.back-button {
+    -fx-background-color: #0056b3;
+    -fx-border-color: #004085;
+}

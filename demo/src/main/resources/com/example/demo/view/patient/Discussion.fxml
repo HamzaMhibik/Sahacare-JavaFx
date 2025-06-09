@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.controller.Patient.DiscussionController"
+      spacing="10" >
+    <stylesheets>
+        <URL value="@style/styleDiscussion.css" />
+    </stylesheets>
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+    <Label fx:id="doctorNameLabel" style="-fx-font-weight: bold;" />
+
+    <!-- Zone d'affichage des messages (prend tout l'espace disponible) -->
+    <ScrollPane fx:id="messagesScrollPane" VBox.vgrow="ALWAYS" styleClass="messages-scroll">
+        <VBox fx:id="messagesContainer" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+        </VBox>
+    </ScrollPane>
+
+    <!-- Zone de saisie pour envoyer un nouveau message -->
+    <HBox spacing="10" VBox.vgrow="NEVER" styleClass="input-container">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <TextField fx:id="messageInput" promptText="Tapez votre message ici..." styleClass="message-input" />
+        <Button fx:id="sendButton" text="Envoyer" onAction="#handleSendMessage" styleClass="send-button"/>
+    </HBox>
+</VBox>

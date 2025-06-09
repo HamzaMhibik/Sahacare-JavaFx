@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.DropShadow?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Static"
+            prefHeight="800.0" prefWidth="1200.0"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- ScrollPane pour permettre le défilement -->
+    <ScrollPane fitToWidth="true" fitToHeight="true">
+        <VBox spacing="30" layoutX="50" layoutY="30" style="-fx-padding: 20;" minHeight="1400">            <!-- Titre de la page -->
+            <Label text="Dashboard Admin" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+            <!-- Conteneur pour les cartes de statistiques -->
+            <VBox spacing="20">
+                <Label text="Statistiques Générales" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #555;" />
+                <HBox fx:id="hbox" spacing="20" />
+            </VBox>
+
+            <!-- Section pour les 3 derniers médecins ajoutés -->
+            <VBox spacing="20">
+                <Label text="3 derniers médecins ajoutés" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #555;" />
+                <HBox fx:id="medecinsBox" spacing="20" />
+            </VBox>
+
+            <!-- Section pour les 3 derniers patients ajoutés -->
+            <VBox spacing="20">
+                <Label text="3 derniers patients ajoutés" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #555;" />
+                <HBox fx:id="patientsBox" spacing="20" />
+            </VBox>
+
+            <!-- Section pour les 3 derniers articles créés -->
+            <VBox spacing="20">
+                <Label text="3 derniers articles créés" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #555;" />
+                <HBox fx:id="articlesBox" spacing="20" />
+            </VBox>
+        </VBox>
+    </ScrollPane>
+
+</AnchorPane>

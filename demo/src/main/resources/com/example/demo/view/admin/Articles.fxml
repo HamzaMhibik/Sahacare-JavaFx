@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controller.Admin.Articles"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <VBox spacing="10" layoutX="10" layoutY="10" prefWidth="1100.0">
+        <!-- Titre -->
+        <Label text="Liste des articles" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- Champs de filtrage -->
+        <HBox spacing="10">
+            <Label text="Filtrer par titre:" />
+            <TextField fx:id="titreFilter" promptText="Titre" />
+            <Label text="Filtrer par auteur:" />
+            <TextField fx:id="auteurFilter" promptText="Auteur" />
+            <Button text="Filtrer" onAction="#applyFilters" />
+        </HBox>
+
+        <!-- Tableau -->
+        <TableView fx:id="articlesTable" prefHeight="400.0" prefWidth="1300.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="titreColumn" text="Titre" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="titre"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="categorieColumn" text="Catégorie" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="categorie"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="300">
+                    <cellValueFactory><PropertyValueFactory property="description"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="usernameColumn" text="Auteur" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="username"/></cellValueFactory>
+                </TableColumn>
+
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>
